@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scal=1.0">
+    <meta http-equiv="X-UA-Comapatible" content="ie=edge">
+    <title>Bé tập tính</title>
+    <!-- Import Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Link javascript -->
+    <script src="./javascripts/index.js"></script>
+
+</head>
+
+<body>
+    <form method="POST" onsubmit="return kiemTra()">
+        <div class="container">
+            <h1 class="title">Bé tập tính</h1>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Số thứ nhất</p>
+                        </div>
+                        <div class="col-md-8">
+                            <input name="so1" type="text" id="so1" value="{{so1}}" onblur="kiemTraSoHang(id)">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Số thứ hai</p>
+                        </div>
+                        <div class="col-md-8">
+                            <input name="so2" type="text" id="so2" value="{{so2}}" onblur="kiemTraSoHang(id)">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="radio">
+                            <input type="radio" {{congRad}} name="pheptinh" value="cong"> Cộng
+                        </div>
+
+                        <div class="radio">
+                            <input type="radio" {{truRad}} name="pheptinh" value="tru"> Trừ
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="radio">
+                            <input type="radio" {{nhanRad}} name="pheptinh" value="nhan"> Nhân
+                        </div>
+
+                        <div class="radio">
+                            <input type="radio" {{chiaRad}} name="pheptinh" value="chia"> Chia
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <p>Kết quả</p>
+                </div>
+                <div class="col-md-4">
+                    <input name="ketqua" type="text" id="ketqua" value="{{ketqua}}" readonly>
+                </div>
+                <div class="col-md-3">
+                    <input type="submit" value="Tính">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <p>Thông báo</p>
+                </div>
+
+                <div class="col-md-7">
+                    <p id="thongbao" style="color: {{color}};">{{thongbao}}</p>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
